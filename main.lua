@@ -22,7 +22,7 @@ function love.load()
 
     math.randomseed(os.time())
 
-    font_16 = love.graphics.newFont("font.ttf", 16)
+    font_16 = love.graphics.newFont("font/font.ttf", 16)
     love.graphics.setFont(font_16)
 
     push:setupScreen(
