@@ -12,7 +12,7 @@ VIRTUAL = {
     HIGHT = 512 / 16 * 9
 }
 
-TILE_SCALE = 32
+TILE_SCALE = 16
 
 debug_info = true
 
