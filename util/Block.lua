@@ -7,11 +7,10 @@ local function getID()
 end
 
 -- Block
-function Block:init(name, img_src, R, G, B, collision)
+function Block:init(name, img_src, collision)
     self.NAME = name
     self.ID = getID()
-    self.img = img_src
-    self.color = {R, G, B}
+    self.img = love.graphics.newImage(img_src)
     self.collision = false
     if collision then
         self.collision = collision
@@ -19,8 +18,7 @@ function Block:init(name, img_src, R, G, B, collision)
 end
 
 function Block:render(x, y, scale)
-    love.graphics.setColor(self.color[1] / 255, self.color[2] / 255, self.color[3] / 255, 1)
-    love.graphics.rectangle("fill", x, y, scale, scale)
+    love.graphics.draw(self.img, x, y)
 end
 
 return Block

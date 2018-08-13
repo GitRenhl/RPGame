@@ -15,13 +15,6 @@ function Map:load(source)
             self.tiles[y][x] = math.random(1, 2)
         end
     end
-    -- local i = 1
-    -- for y = 1, self.HEIGHT do
-    --     for x = 1, self.WIDTH do
-    --         self.tiles[i] = Tile.Grass.ID
-    --         i = i + 1
-    --     end
-    -- end
 end
 
 function Map:get_tile(x, y)
