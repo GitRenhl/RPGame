@@ -20,6 +20,8 @@ function love.load()
     love.graphics.setDefaultFilter("nearest", "nearest")
     love.window.setTitle("Game Name")
 
+    math.randomseed(os.time())
+
     font_16 = love.graphics.newFont("font.ttf", 16)
     love.graphics.setFont(font_16)
 
