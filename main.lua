@@ -12,7 +12,7 @@ VIRTUAL = {
     HIGHT = 512 / 16 * 9
 }
 
-TILE_SCALE = 16
+TILE_SCALE = 32
 
 debug_info = true
 
@@ -36,6 +36,8 @@ function love.load()
             vsync = true
         }
     )
+    map = Map(100, 100)
+    map:load()
 end
 
 function love.resize(w, h)
@@ -56,6 +58,8 @@ end
 
 function love.draw()
     push:apply("start")
+
+    map:render_auto(0, 0, 0, 0)
 
     push:apply("end")
 end
