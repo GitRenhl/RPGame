@@ -1,5 +1,7 @@
 push = require "lib/push"
 
+require("util/Map")
+
 WINDOW = {
     WIDTH = 1280,
     HIGHT = 1280 / 16 * 9
