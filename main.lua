@@ -1,6 +1,7 @@
+Class = require("lib/class")
 push = require "lib/push"
 
-require("util/Map")
+Map = require("util/Map")
 
 WINDOW = {
     WIDTH = 1280,
@@ -10,6 +11,8 @@ VIRTUAL = {
     WIDTH = 512,
     HIGHT = 512 / 16 * 9
 }
+
+TILE_SCALE = 16
 
 debug_info = true
 
