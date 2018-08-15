@@ -61,5 +61,11 @@ function love.draw()
 
     map:render_auto(0, 0, 0, 0)
 
+    displayFPS()
+
     push:apply("end")
+end
+
+function displayFPS()
+    love.graphics.print("FPS: " .. tostring(love.timer.getFPS()), 10, 10)
 end
