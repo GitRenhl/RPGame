@@ -1,6 +1,7 @@
 Class = require("lib/class")
 push = require "lib/push"
 
+Camera = require("util/Camera")
 Map = require("util/Map")
 
 WINDOW = {
@@ -38,6 +39,7 @@ function love.load()
     )
     map = Map(100, 100)
     map:load()
+    camera = Camera(0, 0)
 end
 
 function love.resize(w, h)
@@ -59,7 +61,7 @@ end
 function love.draw()
     push:apply("start")
 
-    map:render_auto(0, 0, 0, 0)
+    map:render_auto(0 + camera.x, 0 + camera.y, 0, 0)
 
     displayFPS()
 
