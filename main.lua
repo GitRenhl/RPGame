@@ -54,6 +54,10 @@ function love.keypressed(key)
     end
 end
 
+function love.keyboard.wasPressed(key)
+    return love.keyboard.isDown(key)
+end
+
 function love.update(dt)
     -- body
 end
