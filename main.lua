@@ -40,7 +40,7 @@ function love.load()
     )
     map = Map(100, 100)
     map:load()
-    camera = Camera(0, 0)
+    camera = Camera()
     player = Player()
 end
 
@@ -62,13 +62,14 @@ end
 
 function love.update(dt)
     player:update(dt)
+    camera:update(dt, player:getX(), player:getY())
 end
 
 function love.draw()
     push:apply("start")
 
-    map:render_auto(0 + camera.x, 0 + camera.y, 0, 0)
-    player:render(player.x, player.y)
+    map:render_auto(-camera.x, -camera.y, 0, 0)
+    player:render(232, 120)
 
     displayFPS()
 
