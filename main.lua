@@ -3,6 +3,7 @@ push = require "lib/push"
 
 Camera = require("util/Camera")
 Map = require("util/Map")
+Player = require("util/Player")
 
 WINDOW = {
     WIDTH = 1280,
@@ -40,6 +41,7 @@ function love.load()
     map = Map(100, 100)
     map:load()
     camera = Camera(0, 0)
+    player = Player()
 end
 
 function love.resize(w, h)
@@ -59,13 +61,14 @@ function love.keyboard.wasPressed(key)
 end
 
 function love.update(dt)
-    -- body
+    player:update(dt)
 end
 
 function love.draw()
     push:apply("start")
 
     map:render_auto(0 + camera.x, 0 + camera.y, 0, 0)
+    player:render(player.x, player.y)
 
     displayFPS()
 
