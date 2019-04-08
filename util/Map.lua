@@ -12,7 +12,13 @@ function Map:load(source)
     for y = 1, self.HEIGHT do
         self.tiles[y] = {}
         for x = 1, self.WIDTH do
-            self.tiles[y][x] = math.random(1, 2)
+            rnd = love.math.noise(x / 10, y / 10)
+            if rnd > 0.3 then
+                self.tiles[y][x] = 1
+            else
+                self.tiles[y][x] = 2
+            end
+            -- self.tiles[y][x] = math.random(1, 2)
         end
     end
 end

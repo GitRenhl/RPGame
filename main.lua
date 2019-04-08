@@ -68,7 +68,7 @@ end
 function love.draw()
     push:apply("start")
 
-    map:render_auto(-camera.x, -camera.y, 0, 0)
+    map:render(-camera.x, -camera.y, 0, 0, 50, 50)
     player:render(232, 120)
 
     displayFPS()
